@@ -1,0 +1,31 @@
+.one {
+    height: 100px;
+    background-color: #F5C6D6;
+    border:5px solid white;
+
+}
+.two {
+    height: 100px;
+    background-color: #EE2E84;
+    border: 5px solid white;
+    }
+.three {
+    height: 100px;
+    background-color: #85CFD8;
+    border: 5px solid white
+}
+.four{
+    height: 100px;
+    width: 50px;
+    background-color: #8DC63F;
+    border: 5px solid white
+}
+.five{
+    height: 100px;
+    width: 50px;
+    background-color: #E76E34;
+
+}
+.four, .five{ 
+    display: inline-block;
+}

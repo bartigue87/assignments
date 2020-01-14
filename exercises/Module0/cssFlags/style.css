@@ -1,0 +1,29 @@
+.france-one{
+    background-color: blue;
+    height:400px;
+    width: 200px;
+}
+.france-two{
+    background-color: red;
+    height: 400px;
+    width: 200px;
+    left: 400px;
+    position: absolute;
+    top:8px;
+}
+.germany-one{
+    background-color: black;
+    height: 100px;
+    width:600px;
+    
+}
+.germany-two{
+    background-color: red;
+    height:100px;
+    width: 600px;
+}
+.germany-three{
+    background-color: rgb(216, 216, 4);
+    height: 100px;
+    width: 600px;
+}
