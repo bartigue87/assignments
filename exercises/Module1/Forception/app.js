@@ -1,12 +1,14 @@
 var people = ["Jon", "Jacob", "Jingle", "Heimer", "Schmidt"]
 var alphabet = "abcdefghijklmnopqrstuvwxyz"
 
-function forception(people, alphabet){
+function forception(){
+    var myArr = []
     for (var i = 0; i < people.length; i++){
-        people[i].push()
+            myArr.push(people[i])
         for (var j = 0; j < alphabet.length; j++){
-            alphabet[j].push()
+            myArr.push(alphabet[j])
         }
-    }
+   }
+   console.log(myArr)
 }
-console.log(forception(people, alphabet))
+console.log(forception())
