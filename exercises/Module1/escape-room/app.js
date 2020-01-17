@@ -3,7 +3,7 @@ const name = readline.question("What is your name? ");
     console.log(name + ", you are trapped in this room you must find a way out.")
 
 choice1 = ["put hand in hole", "find the key", "open door"];
-index = readline.keyInSelect(choice1, 'Choose one?');
+index = readline.keyInSelect(choice1, 'Choose one');
 // console.log(choice1)
     if (index === 0){
         console.log("you died")
