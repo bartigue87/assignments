@@ -7,6 +7,9 @@ const walk = readline.question("Press 'w' to walk. ")
 const HP = 100
 const enemyHP = 100
 const encounter = ["Fight", "Run"]
+if (HP - damageTaken === 0){
+    console.log("YOU DIED. GAME OVER")
+}
 
 
 var enemy = Math.floor(Math.random()*9)
@@ -15,10 +18,15 @@ var enemy = Math.floor(Math.random()*9)
             const index = readline.keyInSelect(encounter, "Choose one")
             if (index === 0){
                 var damageDealt = Math.floor(Math.random()*100)
-                enemyHP - damageDealt
                 console.log("You dealt " + damageDealt + " damage")
-                if (enemyHP === 0){
-                    console.log("You defeated the gazorpion")
+                var damageTaken = Math.floor(Math.random()*100)
+                console.log("The enemy attack caused " + damageTaken + " damage")
+            } else {
+                var run = Math.floor(Math.random()*1)
+                if (run === 0){
+                    console.log("You were able to flee the enemy")
+                } else {
+                    console.log("you were unable to escape")
                 }
             }
         } else if (enemy === 4){
@@ -27,6 +35,15 @@ var enemy = Math.floor(Math.random()*9)
             if (index === 0){
                 var damageDealt = Math.floor(Math.random()*100)
                 console.log("You dealt " + damageDealt + " damage")
+                var damageTaken = Math.floor(Math.random()*100)
+                console.log("The enemy attack caused " + damageTaken + " damage")
+            } else {
+                var run = Math.floor(Math.random()*1)
+                if (run === 0){
+                    console.log("You were able to flee the enemy")
+                } else {
+                    console.log("you were unable to escape")
+                }
             }
         } else if (enemy === 8){
             console.log("You have encountered a gromflomite")
@@ -34,6 +51,15 @@ var enemy = Math.floor(Math.random()*9)
             if (index === 0){
                 var damageDealt = Math.floor(Math.random()*100)
                 console.log("You dealt " + damageDealt + " damage")
+                var damageTaken = Math.floor(Math.random()*100)
+                console.log("The enemy attack caused " + damageTaken + " damage")
+            } else {
+                var run = Math.floor(Math.random()*1)
+                if (run === 0){
+                    console.log("You were able to flee the enemy")
+                } else {
+                    console.log("you were unable to escape")
+                }
             }
          } else {
         console.log("You proceeded forward")
