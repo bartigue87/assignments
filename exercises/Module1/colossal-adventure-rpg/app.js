@@ -11,7 +11,7 @@ function Enemy(name, health){
     this.name = name
     this.health = health
 }
-function enemyCreation(){
+function createEnemy(){
     let randomNum = Math.floor(Math.random()*3)
     if (randomNum === 0){
         return new Enemy("Gazorpion", 100);
@@ -53,17 +53,17 @@ function run(){
 }
 
 function fight(){
-    let currentEnemy = enemyCreation();
+    let currentEnemy = createEnemy();
     console.log(`You've encountered a ${currentEnemy.name}!`)
     const defenseChoice = readline.keyInSelect(["fight", "run"], "What would you like to do?")
     if (defenseChoice === 1){
         run();
     } else {
-        encounterLoop(currentEnemy);
+        encounter(currentEnemy);
     }
 }
 
-function encounterLoop(currentEnemy){
+function encounter(currentEnemy){
     while(currentEnemy.health > 0 && player.health > 0){
         enemyAttack(player);
         let continueFightChoice = readline.keyInSelect(["keep fighting", "run"], "What would you like to do?");
@@ -93,7 +93,7 @@ function attackEnemy(currentEnemy){
     function randomDamage(min, max){
         min = Math.ceil(min);
         max = Math.floor(max);
-        return Math.floor(Math.random()* (100 - 98 + 1)) + 98;
+        return Math.floor(Math.random()* (100 - 98 + 1)) + 92;
     }
     currentEnemy.health = currentEnemy.health - randomDamage();
     console.log("You dealt " + randomDamage() + " damage.")
@@ -110,10 +110,7 @@ function die(){
 function enemyDie(){
     let newInventorylist = inventoryItems.push("laser gun")
     player.health = player.health + 10;
-    console.log(`
-    You've defeated the enemy. You've picked up a new item off the dead body.
-    Here is your inventory list: ${inventoryItems}
-    and you've gained some health points back.`)
+    console.log("You've defeated the enemy. You've picked up a new item off the dead body and you've gained some health points back.")
     if (inventoryItems.length === 7){
         return victory()
     }

@@ -1,6 +1,6 @@
 const colors = ["red", "blue", "green"]
 
-document.getElementById("add").addEventListener("onclick", function(e){
+document.getElementById("add").addEventListener("click", function(e){
     const subItem = createSubItem(e)
     document.getElementById("list").appendChild(subItem)
 })
@@ -13,7 +13,7 @@ function createDropDown(){
         option.value = colors[i]
         dropDown.append(option)
     }
-    dropDown.addEventListener("onchange", function(e){
+    dropDown.addEventListener("change", function(e){
         e.target.parent.backgroundColor = e.target.value
     })
     return dropDown
