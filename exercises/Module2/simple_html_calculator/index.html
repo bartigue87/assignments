@@ -1,0 +1,54 @@
+<!-- You are going to create a simple calculator that can Add, Subtract, and Multiply.
+
+Requirements:
+
+You will have one section (<div>) for each math operation (so 3 sections) total
+Each section has two inputs to take the first and second numbers
+Each section will have a button to perform the operation
+You will inject the result into the HTML (not an alert)
+Your website will have 3 colors
+Your website will have proper padding/spacing to lay things out nicely -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel= "stylesheet" href= "styles.css"/>
+</head>
+<body>
+    <div id="addition">
+        <h1>Addition</h1>
+        <form name="addForm">
+            <input type="text" name="firstAdd"/>
+            <div>+</div>
+            <input type="text" name="secondAdd"/>
+            <button>Submit</button>
+        </form>
+    </div>
+
+    <div id="subtraction">
+        <h1>Subtraction</h1>
+        <form name="subForm">
+            <input type="text" name="firstSub"/>
+            <div>-</div>
+            <input type="text" name="secondSub"/>
+            <button>Submit</button>
+        </form>
+    </div>
+
+    <div id="multiplication">
+        <h1>Multiplication</h1>
+        <form name="multForm">
+            <input type="text" name="firstMult"/>
+            <div>x</div>
+            <input type="text" name="secondMult"/>
+            <button>Submit</button>
+        </form>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>

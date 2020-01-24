@@ -5,7 +5,7 @@ let player = {
     health: 100,
 }
 
-let inventoryItems = ["fists ", "switchblade "];
+let inventoryItems = ["switchblade" , "laser gun", ];
 
 function Enemy(name, health){
     this.name = name
@@ -43,7 +43,7 @@ function walk(){
 }
 
 function run(){
-    const escapeChance = Math.floor(Math.random() *2)
+    const escapeChance = Math.floor(Math.random() *3)
     if(escapeChance === 0){
         console.log("You managed to escape using the portal gun. Keep going!")
     } else {
@@ -108,9 +108,9 @@ function die(){
 }
 
 function enemyDie(){
-    let newInventorylist = inventoryItems.push("laser gun")
+    let newInventorylist = inventoryItems.push("laser gun ammo")
     player.health = player.health + 10;
-    console.log("You've defeated the enemy. You've picked up a new item off the dead body and you've gained some health points back.")
+    console.log("You've defeated the enemy. You've picked up some ammo off the dead body and you've gained some health points back.")
     if (inventoryItems.length === 7){
         return victory()
     }
