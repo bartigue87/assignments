@@ -7,7 +7,7 @@ addForm.addEventListener("submit", function(event){
     const firstAdd = Number(addForm.firstAdd.value)
     const secondAdd = Number(addForm.secondAdd.value)
     addForm.firstAdd.value = ""
-    addForm.secondAdd.value= ""
+    addForm.secondAdd.value = ""
 
     function sum(num1, num2){
         return num1 + num2
