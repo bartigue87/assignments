@@ -1,0 +1,74 @@
+{
+    "menu": [
+        [
+            {
+                "type": "appetizer",
+                "name": "salad",
+                "ingredients": ["lettuce", "tomatoes", "onions", "dressing"],
+                "description": "price is 3.99"
+            },
+            {
+                "type": "appetizer",
+                "name": "soup",
+                "ingredients": ["broth", "chicken", "macaroni"],
+                "description": "price is 3.99"
+            }
+        ],
+        [
+            {
+                "type": "cold sandwhich",
+                "name": "Turkey Sub",
+                "ingredients": ["turkey", "bread", "lettuce", "dressing"],
+                "description": "price is 9.99"
+            },
+            {
+                "type": "cold sandwhich",
+                "name": "Ham Sub",
+                "ingredients": ["ham", "bread", "lettuce", "dressing"],
+                "description": "price is 9.99"
+            }
+        ],
+        [
+            {
+                "type": "hot sandwhich",
+                "name": "meatball sub",
+                "ingredients": ["meatballs", "bread", "cheese", "pasta sauce"],
+                "description": "price is 9.99"
+            },
+            {
+                "type": "hot sandwhich",
+                "name": "steak sub",
+                "ingredients": ["steak", "bread", "cheese", "mushrooms"],
+                "description": "price is 9.99"
+            }
+        ],
+        [
+            {
+                "type": "dessert",
+                "name": "canoli",
+                "ingredients": ["cheese", "whatever canolis are made of"],
+                "description": "price is 1.99"
+            },
+            {
+                "type": "dessert",
+                "name": "cookies",
+                "ingredients": ["cookie dough", "chocalate chips"],
+                "description": "price is 1.99"
+            }
+        ],
+        [
+            {
+                "type": "drink",
+                "name": "soda",
+                "ingredients": ["pepsi", "coke", "sprite"],
+                "description": "price is 1.99"
+            },
+            {
+                "type": "drink",
+                "name": "water",
+                "ingredients": ["water"],
+                "description": "price is 1.99"
+            }
+        ]    
+    ]
+}
