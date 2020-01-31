@@ -1,58 +1,68 @@
-.container {
-    /* give the container display grid */
+#grid{
     display: grid;
-    /* with six rows, 50px high */
-    grid-template-rows: 50px, 50px, 50px, 50px, 50px, 50px,;
-    /* default all cells/children on the left be 2/3 the screen width, and all on the left 1/3 */
-    grid-template-columns: 2fr 1fr
-}
-.container > div {
-    border: solid black 2px;
-    grid-column: 0 / 2;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(39, 1fr);
 }
 
-.authors {
-    background-color: lightcoral;
-    grid-column: 0 / 2;
-}
-.links {
-    background-color: lightpink;
-    grid-column: 0 / 2;
-}
-
-.footer {
-    /* make these span the width of the page */
-    grid-column: 0 / 3;
-    background-color: aquamarine;
+#div1{
+    grid-column: 1/3;
+    grid-row: 1/5;
+   
+    width: 100%;
+    /* height: 310px; */
+    background-color: green;
+   
 }
 
-@media (max-width: 900px){
-    /* use this media query to help these two cells drop to the bottom when screens are smaller */
-    .authors {
-         
-    }
-    .links {
-
-    }
-    /* container could use some help so that it's children are full screen width */
-    .container {
-        
-    }
+#div2{
+    background-color: green;
+    grid-column: 3/4;
+    grid-row: 1/5;
+    /* height: 310px; */
+    opacity: .8;
 }
 
-/* FLEX */
-/* use flexbox to make the icons behave like css zen garden's social icons */
-.icons {
-    display: flex;
-    justify-content: space-around;
-    width: 50%;
-    margin: auto;
-    padding: 10px;
+#div3{
+    grid-column: 1/3;
+    grid-row: 5/17;
+    width: 100%;
+    /* height: 1170px; */
 }
 
-.icons > div {
-    width: 30px;
-    height: 30px;
-    background-color: black;
-    border-radius: 50%;
+#div4{
+    grid-column: 3/4;
+    grid-row: 5/17;
+    height:1170px;
+    background-color: greenyellow;
+    opacity: .2
+}
+
+#div5{
+    grid-column: 1/3;
+    grid-row: 17/25;
+}
+
+#div6{
+    grid-column: 3/4;
+    grid-row: 17/25;
+}
+
+#div7{
+    grid-column: 1/3;
+    grid-row: 25/34;
+}
+
+#div8{
+    grid-column: 3/4;
+    grid-row: 25/34;
+}
+
+#div9{
+    grid-column: 1/4;
+    grid-row: 34/38;
+}
+
+#div10{
+    grid-column: 1/4;
+    grid-row: 38/40;
 }
