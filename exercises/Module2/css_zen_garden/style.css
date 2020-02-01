@@ -1,7 +1,13 @@
+body{
+	color: #325050;
+    background: #fff;
+    font-family: 'Libre Baskerville', sans-serif;
+    font-size: 100%;
+}
 #grid{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: repeat(39, 1fr);
+    grid-template-rows: repeat(38, 1fr);
 }
 
 #div1{
@@ -10,12 +16,12 @@
    
     width: 100%;
     /* height: 310px; */
-    background-color: green;
+    background-color: #3a6958de;
    
 }
 
 #div2{
-    background-color: green;
+    background-color: #3a6958de;
     grid-column: 3/4;
     grid-row: 1/5;
     /* height: 310px; */
@@ -23,9 +29,9 @@
 }
 
 #div3{
+	padding:1em 5% 1em 10%;
     grid-column: 1/3;
     grid-row: 5/17;
-    width: 100%;
     /* height: 1170px; */
 }
 
@@ -33,36 +39,46 @@
     grid-column: 3/4;
     grid-row: 5/17;
     height:1170px;
-    background-color: greenyellow;
+    background-color: #a2c36d;
     opacity: .2
 }
 
 #div5{
+	padding:1em 5% 1em 10%;
     grid-column: 1/3;
-    grid-row: 17/25;
+	grid-row: 17/25;
+	background-color: rgba(138,188,159,0.5);
 }
 
 #div6{
     grid-column: 3/4;
-    grid-row: 17/25;
+	grid-row: 17/25;
+	background-color: rgba(138,188,159,0.5);
+	opacity: .9;
 }
 
 #div7{
+	padding:1em 5% 1em 10%;
     grid-column: 1/3;
     grid-row: 25/34;
 }
 
 #div8{
     grid-column: 3/4;
-    grid-row: 25/34;
+	grid-row: 25/34;
+	background-color: #a2c36d;
+    opacity: .2
 }
 
 #div9{
     grid-column: 1/4;
-    grid-row: 34/38;
+	grid-row: 34/37;
+	background-color: #3E5D67;
+
 }
 
 #div10{
     grid-column: 1/4;
-    grid-row: 38/40;
+	grid-row: 37/39;
+	background-color: #134347;
 }
