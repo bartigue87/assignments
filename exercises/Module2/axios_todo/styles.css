@@ -1,0 +1,24 @@
+#head{
+    position: relative;
+    text-align: center;
+    font-size: 100px;
+    color:#980101;
+    font-style: italic;
+}
+body{
+    background-color: #00968836;
+}
+#form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#button{
+    height: 35px;
+    width:70px;
+}
+.input{
+    height: 30px;
+    width: 400px;
+    font-size: 15px;
+}
