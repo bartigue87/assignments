@@ -8,8 +8,8 @@ xhr.send()
 
 xhr.onreadystatechange = function(){
     if(xhr.readyState === 4 && xhr.status === 200){
-        const JSONsata = xhr.responseText
-        const data = JSON.parse(JSONsata)
+        const JSONdata = xhr.responseText
+        const data = JSON.parse(JSONdata)
         showData(data.results)
 
     }

@@ -41,5 +41,5 @@ class Player {
     }
 }
 
-const newPlayer = new Player("mario", 0, "Big", false, true)
+const newPlayer = new Player(setName("mario"), 0, "Big", false, true)
 const randomNum = Math.floor(Math.random()*3)
