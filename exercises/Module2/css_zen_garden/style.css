@@ -1,84 +1,92 @@
-body{
-	color: #325050;
-    background: #fff;
-    font-family: 'Libre Baskerville', sans-serif;
-    font-size: 100%;
+body {
+  color: #325050;
+  background: #fff;
+  font-family: "Libre Baskerville", sans-serif;
+  font-size: 100%;
 }
-#grid{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: repeat(38, 1fr);
-}
-
-#div1{
-    grid-column: 1/3;
-    grid-row: 1/5;
-   
-    width: 100%;
-    /* height: 310px; */
-    background-color: #3a6958de;
-   
+#grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(38, 1fr);
 }
 
-#div2{
-    background-color: #3a6958de;
-    grid-column: 3/4;
-    grid-row: 1/5;
-    /* height: 310px; */
-    opacity: .8;
+#div1 {
+  grid-column: 1/3;
+  grid-row: 1/5;
+
+  width: 100%;
+  /* height: 310px; */
+  background-color: #3a6958de;
 }
 
-#div3{
-	padding:1em 5% 1em 10%;
-    grid-column: 1/3;
-    grid-row: 5/17;
-    /* height: 1170px; */
+#div2 {
+  background-color: #3a6958de;
+  grid-column: 3/4;
+  grid-row: 1/5;
+  /* height: 310px; */
+  opacity: 0.8;
 }
 
-#div4{
-    grid-column: 3/4;
-    grid-row: 5/17;
-    height:1170px;
-    background-color: #a2c36d;
-    opacity: .2
+#div3 {
+  padding: 1em 5% 1em 10%;
+  grid-column: 1/3;
+  grid-row: 5/17;
+  /* height: 1170px; */
 }
 
-#div5{
-	padding:1em 5% 1em 10%;
-    grid-column: 1/3;
-	grid-row: 17/25;
-	background-color: rgba(138,188,159,0.5);
+#div4 {
+  grid-column: 3/4;
+  grid-row: 5/17;
+  height: 1170px;
+  background-color: #a2c36d;
+  opacity: 0.2;
 }
 
-#div6{
-    grid-column: 3/4;
-	grid-row: 17/25;
-	background-color: rgba(138,188,159,0.5);
-	opacity: .9;
+#div5 {
+  padding: 1em 5% 1em 10%;
+  grid-column: 1/3;
+  grid-row: 17/25;
+  background-color: rgba(138, 188, 159, 0.5);
 }
 
-#div7{
-	padding:1em 5% 1em 10%;
-    grid-column: 1/3;
-    grid-row: 25/34;
+#div6 {
+  grid-column: 3/4;
+  grid-row: 17/25;
+  background-color: rgba(138, 188, 159, 0.5);
+  opacity: 0.9;
 }
 
-#div8{
-    grid-column: 3/4;
-	grid-row: 25/34;
-	background-color: #a2c36d;
-    opacity: .2
+#div7 {
+  padding: 1em 5% 1em 10%;
+  grid-column: 1/3;
+  grid-row: 25/34;
 }
 
-#div9{
-    grid-column: 1/4;
-	grid-row: 34/37;
-	background-color: #3E5D67;
-
+#div8 {
+  grid-column: 3/4;
+  grid-row: 25/34;
+  background-color: #a2c36d;
+  opacity: 0.2;
 }
 
-#div10{
-    grid-column: 1/4;
-	grid-row: 37/39;
-	background-color: #134347;
+#div9 {
+  grid-column: 1/4;
+  grid-row: 34/37;
+  background-color: #3e5d67;
+}
+
+#div10 {
+  grid-column: 1/4;
+  grid-row: 37/39;
+  background-color: #134347;
+}
+
+h3 {
+  font-size: 30pt;
+  margin: 2em 0 0 0;
+  color: #2e484c;
+  font-family: "Julius Sans One", sans-serif;
+  font-size: 1.8em;
+  font-weight: normal;
+  text-transform: uppercase;
 }
