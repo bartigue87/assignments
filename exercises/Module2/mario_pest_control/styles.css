@@ -1,37 +1,80 @@
-#title{
-    color: red;
-    position: relative;;
-    text-align: center;
-    margin-bottom: 100px;
-
+#title {
+  color: red;
+  position: relative;
+  text-align: center;
+  margin-bottom: 100px;
 }
 
-.image{
-    height: 200px;
-    width: 200px
+.image {
+  height: 200px;
+  width: 200px;
 }
 
-form{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+/* form {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+} */
+
+/* button {
+  width: 60px;
+  margin-top: 50px;
+  grid-column: 1/2;
+} */
+
+input {
+  width: 60px;
 }
 
-button{
-    width:60px;
-    margin-top: 50px;
-    grid-column: 1/2;
-}
-    
-input{
-    width: 60px;
-}
-
-.div{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* .div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} */
+body {
+  margin: 10px;
 }
 
-body{
-    background-color: silver;
+button {
+  cursor: pointer;
+  background-color: #3498db;
+  border: 2px solid #3498db;
+  border-radius: 4px;
+  color: white;
+  font-size: 16px;
+  padding: 10px;
+  margin-top: 20px;
+  width: 100%;
+  position: relative;
+  grid-column: 1/4;
+}
+
+.container {
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  width: 400px;
+}
+
+#form {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+#cheep {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  grid-column: 3/4;
+}
+#goomba {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  grid-column: 1/2;
+}
+#bomb {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  grid-column: 2/3;
 }

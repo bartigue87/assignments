@@ -20,33 +20,43 @@ Upon pressing the button, an alert should pop up that looks like this: -->
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <form name="form">
-        <input type="text" name="firstName" placeholder="First Name"/>
-        <input type="text" name="lastName" placeholder="Last Name"/>
-        Age: <input type="number" name="age"/>
-        Male: <input type="radio" name="gender" value="Male"/>
-        Female: <input type="radio" name="gender" value="Female"/>
-        <div>Dietary Restricitons:</div> 
-        Vegan: <input type="checkbox" name="diet" value="Vegan"/>
-        Lactose Free: <input type="checkbox" name="diet" value=" Lactose Free"/>
-        Gluten Free: <input type="checkbox" name="diet" value=" Gluten Free"/>
-        Destination: 
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="container">
+      <form name="form" id="form">
+        <h3>Travel Form</h3>
+        <input
+          type="text"
+          name="firstName"
+          placeholder="First Name"
+          class="in"
+        />
+        <input type="text" name="lastName" placeholder="Last Name" class="in" />
+        Age: <input type="number" name="age" class="in" /> Male:
+        <input type="radio" name="gender" value="Male" class="in" /> Female:
+        <input type="radio" name="gender" value="Female" class="in" />
+        <div>Dietary Restricitons:</div>
+        Vegan:
+        <input type="checkbox" name="diet" value="Vegan" class="in" /> Lactose
+        Free:
+        <input type="checkbox" name="diet" value=" Lactose Free" class="in" />
+        Gluten Free:
+        <input type="checkbox" name="diet" value=" Gluten Free" class="in" />
+        Destination:
         <select name="city">
-            <option value="New York City">New York City</option>
-            <option value="Miami">Miami</option>
-            <option value="Denver">Denver</option>
+          <option value="New York City">New York City</option>
+          <option value="Miami">Miami</option>
+          <option value="Denver">Denver</option>
         </select>
         <button>Submit</button>
-
-    </form>
+      </form>
+    </div>
     <script src="app.js"></script>
-</body>
+  </body>
 </html>
