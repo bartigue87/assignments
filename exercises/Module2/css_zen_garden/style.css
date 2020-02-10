@@ -4,123 +4,178 @@ body {
   font-family: "Libre Baskerville", sans-serif;
   font-size: 100%;
 }
-#grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: repeat(38, 1fr);
+
+@media only screen and (min-width: 800px) {
+  #grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(38, 1fr);
+  }
+
+  #div1 {
+    grid-column: 1/3;
+    grid-row: 1/5;
+    width: 100%;
+    /* height: 310px; */
+    background-color: #3a6958de;
+  }
+
+  #div2 {
+    background-color: #3a6958de;
+    grid-column: 3/4;
+    grid-row: 1/5;
+    /* height: 310px; */
+    opacity: 0.8;
+  }
+
+  #div3 {
+    padding: 1em 5% 1em 10%;
+    grid-column: 1/3;
+    grid-row: 5/17;
+    /* height: 1170px; */
+  }
+
+  #div4 {
+    grid-column: 3/4;
+    grid-row: 5/17;
+    height: 1170px;
+    background-color: #a2c36d;
+    opacity: 0.2;
+  }
+
+  #div5 {
+    padding: 1em 5% 1em 10%;
+    grid-column: 1/3;
+    grid-row: 17/25;
+    background-color: rgba(138, 188, 159, 0.5);
+  }
+
+  #div6 {
+    grid-column: 3/4;
+    grid-row: 17/25;
+    background-color: rgba(138, 188, 159, 0.5);
+    opacity: 0.9;
+  }
+
+  #div7 {
+    padding: 1em 5% 1em 10%;
+    grid-column: 1/3;
+    grid-row: 25/34;
+  }
+
+  #div8 {
+    grid-column: 3/4;
+    grid-row: 25/34;
+    background-color: #a2c36d;
+    opacity: 0.2;
+  }
+
+  #div9 {
+    grid-column: 1/4;
+    grid-row: 34/37;
+    background-color: #3e5d67;
+  }
+
+  #div10 {
+    grid-column: 1/4;
+    grid-row: 37/39;
+    background-color: #134347;
+  }
+
+  h3 {
+    font-size: 30pt;
+    margin: 2em 0 0 0;
+    color: #2e484c;
+    font-family: "Julius Sans One", sans-serif;
+    font-size: 1.8em;
+    font-weight: normal;
+    text-transform: uppercase;
+  }
+
+  #banner h1 {
+    color: #fff;
+    position: relative;
+    display: inline-block;
+    margin: 15px 0 0 0;
+    padding: 60px 0 5px 0;
+    border-bottom: none;
+    font-family: "Julius Sans One", sans-serif;
+    font-size: 3.2em;
+    text-transform: uppercase;
+  }
+
+  #banner h2 {
+    font-style: italic;
+    display: block;
+    margin: 0;
+    padding: 5px 0 60px 70px;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .design-name {
+    display: block;
+    margin-bottom: 0.25em;
+    font-family: "Julius Sans One", sans-serif;
+    font-size: 1.2em;
+    font-style: normal;
+    text-transform: uppercase;
+  }
+  .designer-name {
+    color: #616857;
+    font-size: 0.9em;
+    font-style: normal;
+  }
 }
 
-#div1 {
-  grid-column: 1/3;
-  grid-row: 1/5;
-
-  width: 100%;
-  /* height: 310px; */
-  background-color: #3a6958de;
-}
-
-#div2 {
-  background-color: #3a6958de;
-  grid-column: 3/4;
-  grid-row: 1/5;
-  /* height: 310px; */
-  opacity: 0.8;
-}
-
-#div3 {
-  padding: 1em 5% 1em 10%;
-  grid-column: 1/3;
-  grid-row: 5/17;
-  /* height: 1170px; */
-}
-
-#div4 {
-  grid-column: 3/4;
-  grid-row: 5/17;
-  height: 1170px;
-  background-color: #a2c36d;
-  opacity: 0.2;
-}
-
-#div5 {
-  padding: 1em 5% 1em 10%;
-  grid-column: 1/3;
-  grid-row: 17/25;
-  background-color: rgba(138, 188, 159, 0.5);
-}
-
-#div6 {
-  grid-column: 3/4;
-  grid-row: 17/25;
-  background-color: rgba(138, 188, 159, 0.5);
-  opacity: 0.9;
-}
-
-#div7 {
-  padding: 1em 5% 1em 10%;
-  grid-column: 1/3;
-  grid-row: 25/34;
-}
-
-#div8 {
-  grid-column: 3/4;
-  grid-row: 25/34;
-  background-color: #a2c36d;
-  opacity: 0.2;
-}
-
-#div9 {
-  grid-column: 1/4;
-  grid-row: 34/37;
-  background-color: #3e5d67;
-}
-
-#div10 {
-  grid-column: 1/4;
-  grid-row: 37/39;
-  background-color: #134347;
-}
-
-h3 {
-  font-size: 30pt;
-  margin: 2em 0 0 0;
-  color: #2e484c;
-  font-family: "Julius Sans One", sans-serif;
-  font-size: 1.8em;
-  font-weight: normal;
-  text-transform: uppercase;
-}
-
-#banner h1 {
-  color: #fff;
-  position: relative;
-  display: inline-block;
-  margin: 15px 0 0 0;
-  padding: 60px 0 5px 0;
-  border-bottom: none;
-  font-family: "Julius Sans One", sans-serif;
-  font-size: 3.2em;
-  text-transform: uppercase;
-}
-
-#banner h2 {
-  font-style: italic;
-  display: block;
-  margin: 0;
-  padding: 5px 0 60px 70px;
-  color: rgba(255, 255, 255, 0.6);
-}
-
-.design-name {
-  display: block;
-  margin-bottom: 0.25em;
-  font-family: "Julius Sans One", sans-serif;
-  font-size: 1.2em;
-  font-style: normal;
-  text-transform: uppercase;
-}
-.designer-name {
-  color: #616857;
-  font-size: 0.9em;
-  font-style: normal;
+@media only screen and (min-width: 500px) and (max-width: 799px) {
+  #grid {
+    display: grid;
+    grid-template-rows: repeat(8, 1fr);
+  }
+  #div1 {
+    grid-row: 1/2;
+    height: 220px;
+    width: 100%;
+    /* height: 310px; */
+    background-color: #3a6958de;
+  }
+  #div2 {
+    background-color: #3a6958de;
+    height: 200px;
+    grid-row: 8/9;
+    /* height: 310px; */
+    opacity: 0.8;
+  }
+  #div3 {
+    padding: 1em 5% 1em 10%;
+    height: 200px;
+    grid-row: 2/3;
+    /* height: 1170px; */
+  }
+  #div4 {
+    grid-row: 4/5;
+    height: 570px;
+    background-color: #a2c36d;
+    opacity: 0.2;
+  }
+  #div5 {
+    padding: 1em 5% 1em 10%;
+    grid-row: 5/6;
+    background-color: rgba(138, 188, 159, 0.5);
+  }
+  #div7 {
+    padding: 1em 5% 1em 10%;
+    height: 200px;
+    grid-row: 3/4;
+  }
+  #div9 {
+    grid-row: 6/7;
+    background-color: #3e5d67;
+    height: 200px;
+  }
+  #div10 {
+    grid-row: 7/8;
+    background-color: #134347;
+    height: 200px;
+  }
 }
