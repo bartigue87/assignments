@@ -2,10 +2,10 @@ import React from "react";
 
 function Spot(props) {
   return (
-    <div>
-      <h2>{props.vacationSpot.place}</h2>
-      <p>{props.spot.price}</p>
-      <p>{props.spot.timeToGo}</p>
+    <div className="card">
+      <h3 className="place">{props.place}</h3>
+      <p className="text">Price: ${props.price}</p>
+      <p className="text">Time to go: {props.timeToGo}</p>
     </div>
   );
 }
