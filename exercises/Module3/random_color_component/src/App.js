@@ -4,7 +4,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      color: {}
+      color: "red"
     };
   }
 
@@ -12,22 +12,25 @@ class App extends React.Component {
     fetch("http://www.colr.org/json/color/random")
       .then(response => response.json())
       .then(data => {
+        let color = data.colors[0].hex;
         this.setState({
-          color: data
+          color: color
         });
+        console.log(color);
 
-        console.log(this.state.color.colors[0].hex);
+        // console.log(this.state.color.colors[0].hex);
       });
   }
 
   render() {
-    // const styles = {
-    //   backgroundColor: this.state.color.colors[0].hex}
-    // console.log(styles);
-    console.log(this.state.color.colors);
+    const styles = {
+      backgroundColor: `#${this.state.color}`,
+      height: "1000px",
+      width: "100%"
+    };
     return (
       <div>
-        <h1>d</h1>
+        <div className="coloredDiv" style={styles}></div>
       </div>
     );
   }
