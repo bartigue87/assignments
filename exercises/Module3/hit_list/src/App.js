@@ -20,9 +20,20 @@ class App extends React.Component {
   }
 
   render() {
+    console.log(this.state.targets);
+    const targetArr = this.state.targets.map(function(target) {
+      return (
+        <div className="container">
+          <h4>{target.name}</h4>
+
+          <img className="image" src={target.image} />
+        </div>
+      );
+    });
     return (
       <div>
-        <h1>j</h1>
+        <h1>Hit List</h1>
+        <div className="div-container">{targetArr}</div>
       </div>
     );
   }
