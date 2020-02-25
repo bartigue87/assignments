@@ -43,6 +43,15 @@ class App extends React.Component {
   }
 
   render() {
+    const {
+      firstName,
+      email,
+      phone,
+      placeOfBirth,
+      favoriteFood,
+      description,
+      lastName
+    } = this.state;
     const mapBadges = this.state.badges.map(function(badge) {
       return (
         <div>
@@ -60,49 +69,49 @@ class App extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <input
             type="text"
-            value={this.state.firstName}
+            value={firstName}
             name="firstName"
             placeholder="First Name"
             onChange={this.handleChange}
           />
           <input
             type="text"
-            value={this.state.lastName}
+            value={lastName}
             name="lastName"
             placeholder="Last Name"
             onChange={this.handleChange}
           />
           <input
             type="email"
-            value={this.state.email}
+            value={email}
             name="email"
             placeholder="Email"
             onChange={this.handleChange}
           />
           <input
             type="text"
-            value={this.stateplaceOfBirth}
+            value={placeOfBirth}
             name="placeOfBirth"
             placeholder="Place of Birth"
             onChange={this.handleChange}
           />
           <input
             type="number"
-            value={this.state.phone}
+            value={phone}
             name="phone"
             placeholder="Phone Number"
             onChange={this.handleChange}
           />
           <input
             type="text"
-            value={this.state.favoriteFood}
+            value={favoriteFood}
             name="favoriteFood"
             placeholder="Favorite Food"
             onChange={this.handleChange}
           />
           <input
             type="text"
-            value={this.state.description}
+            value={description}
             name="description"
             placeholder="Tell us about yourself"
             onChange={this.handleChange}
