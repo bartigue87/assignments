@@ -25,15 +25,15 @@ class App extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     this.setState(function(prevState) {
-      const newBadgeItem = prevState.firstName + " " + prevState.lastName;
+      const fullName = prevState.firstName + "" + prevState.lastName;
       return {
         badges: [
           {
-            title: newBadgeItem,
+            fullName: fullName,
             email: prevState.email,
-            birthPlace: prevState.placeOfBirth,
+            placeOfBirth: prevState.placeOfBirth,
             phone: prevState.phone,
-            favFood: prevState.favoriteFood,
+            favoriteFood: prevState.favoriteFood,
             description: prevState.description
           },
           ...prevState.badges
@@ -46,71 +46,70 @@ class App extends React.Component {
     const mapBadges = this.state.badges.map(function(badge) {
       return (
         <div>
-          <p>{badge.title}</p>
+          <p>{badge.fullName}</p>
           <p>{badge.email}</p>
-          <p>{badge.birthPlace}</p>
+          <p>{badge.placeOfBirth}</p>
           <p>{badge.phone}</p>
-          <p>{badge.favFood}</p>
+          <p>{badge.favoriteFood}</p>
           <p>{badge.description}</p>
         </div>
       );
     });
     return (
       <div>
-        <form className="form" onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit}>
           <input
             type="text"
-            name="firstName"
             value={this.state.firstName}
+            name="firstName"
             placeholder="First Name"
             onChange={this.handleChange}
           />
           <input
             type="text"
-            name="lastName"
             value={this.state.lastName}
+            name="lastName"
             placeholder="Last Name"
             onChange={this.handleChange}
           />
           <input
             type="email"
-            name="email"
             value={this.state.email}
+            name="email"
             placeholder="Email"
             onChange={this.handleChange}
           />
           <input
             type="text"
+            value={this.stateplaceOfBirth}
             name="placeOfBirth"
-            value={this.state.placeOfBirth}
             placeholder="Place of Birth"
             onChange={this.handleChange}
           />
           <input
             type="number"
+            value={this.state.phone}
             name="phone"
-            value={this.state.number}
             placeholder="Phone Number"
             onChange={this.handleChange}
           />
           <input
             type="text"
-            name="favoriteFood"
             value={this.state.favoriteFood}
+            name="favoriteFood"
             placeholder="Favorite Food"
             onChange={this.handleChange}
           />
-          <textarea
-            name="description"
+          <input
+            type="text"
             value={this.state.description}
+            name="description"
             placeholder="Tell us about yourself"
             onChange={this.handleChange}
           />
           <button>Submit</button>
         </form>
-        <div className="divContainer">
-          <div className="container">{mapBadges}</div>
-        </div>
+        <div>{mapBadges}</div>
       </div>
     );
   }

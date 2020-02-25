@@ -3,15 +3,8 @@ import vacationSpots from "./VacationSpots";
 import Spot from "./Spot";
 
 function App() {
-  const vacationComponents = vacationSpots.map(function(spot) {
-    return (
-      <Spot
-        key={spot.id}
-        place={spot.place}
-        price={spot.price}
-        timeToGo={spot.timeToGo}
-      />
-    );
+  const vacationComponents = vacationSpots.map(function(spots) {
+    return <Spot key={spots.id} spot={spots} />;
   });
   return <div>{vacationComponents}</div>;
 }
