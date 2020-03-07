@@ -30,7 +30,7 @@ function walk() {
   if (userChoice === 0) {
     const randomNum = Math.floor(Math.random() * 3);
     if (randomNum === 0) {
-      fight();
+      encounter();
     } else {
       console.log("No threats in sight, you proceeded forward");
     }
@@ -55,7 +55,7 @@ function run() {
   }
 }
 
-function fight() {
+function encounter() {
   let currentEnemy = createEnemy();
   console.log(`You've encountered a ${currentEnemy.name}!`);
   const defenseChoice = readline.keyInSelect(
@@ -65,11 +65,11 @@ function fight() {
   if (defenseChoice === 1) {
     run();
   } else {
-    encounter(currentEnemy);
+    fight(currentEnemy);
   }
 }
 
-function encounter(currentEnemy) {
+function fight(currentEnemy) {
   while (currentEnemy.health > 0 && player.health > 0) {
     enemyAttack(player);
     let continueFightChoice = readline.keyInSelect(
