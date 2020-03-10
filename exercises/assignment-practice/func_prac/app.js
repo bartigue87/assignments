@@ -146,4 +146,48 @@ function firstVowel(str) {
   return str.search(/a|e|i|o|u/i);
 }
 
-console.log(firstVowel("Th d e quck brown fox"));
+console.log(firstVowel("Th d e quick brown fox"));
+
+function calculateExponent(num, exp) {
+  return Math.pow(num, exp);
+}
+
+function addIndexes(arr) {
+  return arr.map(function(val, i) {
+    return val + i;
+  });
+}
+
+console.log(addIndexes([1, 2, 3, 4, 5, 6]));
+
+function match(s1, s2) {
+  if (s1.toUpperCase() === s2.toUpperCase()) {
+    return true;
+  } else return false;
+}
+
+function pHName(pH) {
+  if (pH === 7) {
+    return "neutral";
+  } else if (pH > 7 && pH <= 14) {
+    return "alkaline";
+  } else if (pH < 7 && pH >= 0) {
+    return "acidic";
+  } else return "invalid";
+}
+
+function isTriangle(a, b, c) {
+  return a + b > c && a + c > b && c + b > a;
+}
+
+function isPlural(word) {
+  if (word.endsWith("s")) {
+    return true;
+  } else return false;
+}
+
+function equalSlices(totalSlices, numPeople, slicesEach) {
+  if (numPeople * slicesEach <= totalSlices) {
+    return true;
+  } else return false;
+}

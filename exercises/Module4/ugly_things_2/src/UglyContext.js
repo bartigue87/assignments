@@ -1,9 +1,9 @@
 import React from "react";
-const { Provider, Consumer } = React.createContext.context();
+const { Provider, Consumer } = React.createContext();
 
 class UglyContextProvider extends React.Component {
   render() {
-    return <Provider value={}>{this.props.children}</Provider>;
+    return <Provider>{this.props.children}</Provider>;
   }
 }
 
