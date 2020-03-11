@@ -199,3 +199,25 @@ function cityFacts(city) {
 function spaceMeOut(str) {
   return [...str].join(" ");
 }
+
+function intOrString(param) {
+  if (typeof param === "number") {
+    return "int";
+  } else return "str";
+}
+
+function wumbo(words) {
+  return words.replace(/M/g, "W");
+}
+
+function skipTooMuchSugarDrinks(drinks) {
+  return drinks.filter(function(drink) {
+    return drink !== "cola" && drink !== "fanta";
+  });
+}
+
+function totalCups(n) {
+  return n + Math.floor(n / 6);
+}
+
+console.log(totalCups(29));

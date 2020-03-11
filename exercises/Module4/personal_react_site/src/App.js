@@ -1,25 +1,17 @@
 import React from "react";
+import Form from "./Form";
 
 function App() {
   return (
-    <div class="container">
+    <div className="container">
       <h1>Recipes</h1>
-      <div class="flex">
-        <form class="flex" id="submit">
-          <input
-            type="text"
-            id="search"
-            placeholder="Search for meals or keywords"
-          />
-          <button class="search-btn" type="submit">
-            Search
-          </button>
-        </form>
+      <div className="flex">
+        <Form />
       </div>
 
-      <div id="result-heading"></div>
-      <div id="meals" class="meals"></div>
-      <div id="single-meal"></div>
+      <div className="result-heading"></div>
+      <div className="meals"></div>
+      <div className="single-meal"></div>
     </div>
   );
 }
