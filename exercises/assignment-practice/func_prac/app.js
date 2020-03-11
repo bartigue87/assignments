@@ -191,3 +191,11 @@ function equalSlices(totalSlices, numPeople, slicesEach) {
     return true;
   } else return false;
 }
+
+function cityFacts(city) {
+  return `${city.name} has a population of ${city.population} and is situated in ${city.continent}`;
+}
+
+function spaceMeOut(str) {
+  return [...str].join(" ");
+}
