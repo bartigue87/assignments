@@ -221,3 +221,21 @@ function totalCups(n) {
 }
 
 console.log(totalCups(29));
+
+// const nums = [...nums];
+// for (let i = 0; i <= 100; i++) {
+//   if (i % 3 === 0) {
+//     return "fizz";
+//   } else if (i % 5 === 0) {
+//     return "buzz";
+//   } else if (i % 3 === 0 && i % 5 === 0) {
+//     return "FizzBuzz";
+//   } else return nums;
+// }
+// console.log(nums);
+
+removeSpace = str => {
+  return str.replace(/ /g, "_");
+};
+
+console.log(removeSpace("frank sinatra"));
