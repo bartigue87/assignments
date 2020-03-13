@@ -1,60 +1,65 @@
-import React, { Component } from "react";
+import React, { useEffect, useState } from "react";
+import Recipe from "./Recipe";
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      query: ""
-    };
-  }
+function App() {
+  const APP_ID = process.env.REACT_APP_APIID;
+  const APP_KEY = process.env.REACT_APP_APIKEY;
 
-  search = event => {
-    event.preventDefault();
-    const baseUrl = "https://api.spotify.com/v1/search?";
-    const fetchUrl = `${baseUrl}q=${this.state.query}&type=artist&limit=1`;
-    console.log("fetchUrl", fetchUrl);
+  const [recipes, setRecipes] = useState([]);
+  const [search, setSearch] = useState("");
+  const [query, setQuery] = useState("");
 
-    fetch(fetchUrl, {
-      method: "GET"
-    })
+  useEffect(() => {
+    getRecipes();
+  }, [query]);
+
+  const getRecipes = () => {
+    fetch(
+      `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`
+    )
       .then(response => response.json())
-      .then(json => {
-        const artist = json.artists.items[0];
-        console.log("artist", artist);
+      .then(response => {
+        setRecipes(response.hits);
       });
   };
 
-  handleChange = event => {
-    const { name, value } = event.target;
-    this.setState({ [name]: value });
+  const handleChange = event => {
+    setSearch(event.target.value);
   };
 
-  render() {
-    return (
-      <div className="container">
-        <h1 className="header">Music Finder</h1>
-        <div>
-          <form className="flex" id="submit" onSubmit={this.search}>
-            <input
-              type="text"
-              name="query"
-              value={this.state.query}
-              id="search"
-              placeholder="Search for artists..."
-              onChange={this.handleChange}
-            />
-            <button className="search-btn" type="submit">
-              Search
-            </button>
-          </form>
-        </div>
-        <div className="profile">
-          <div>Artist Picture</div>
-          <div>Artist Name</div>
-        </div>
-        <div className="gallery">Gallery</div>
+  const handleSubmit = event => {
+    event.preventDefault();
+    setQuery(search);
+    setSearch("");
+  };
+
+  return (
+    <div className="container">
+      <h1>Recipe Finder</h1>
+      <form onSubmit={handleSubmit} className="form">
+        <input
+          className="input"
+          type="text"
+          value={search}
+          onChange={handleChange}
+        />
+        <button className="button" type="submit">
+          Search
+        </button>
+      </form>
+      <div className="recipes">
+        {recipes.map(recipe => (
+          <Recipe
+            key={recipe.recipe.label}
+            title={recipe.recipe.label}
+            calories={recipe.recipe.calories}
+            image={recipe.recipe.image}
+            ingredients={recipe.recipe.ingredients}
+          />
+        ))}
       </div>
-    );
-  }
+    </div>
+  );
 }
+
 export default App;
