@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Recipe from "./Recipe";
+import { Switch, Route } from "react-router-dom";
+import Ingredients from "./Ingredients";
 
 function App() {
   const APP_ID = process.env.REACT_APP_APIID;
@@ -19,6 +21,7 @@ function App() {
     )
       .then(response => response.json())
       .then(response => {
+        console.log(response.hits);
         setRecipes(response.hits);
       });
   };
@@ -38,6 +41,7 @@ function App() {
       <h1>Recipe Finder</h1>
       <form onSubmit={handleSubmit} className="form">
         <input
+          placeholder="Search for meals or keyword "
           className="input"
           type="text"
           value={search}
@@ -58,6 +62,11 @@ function App() {
           />
         ))}
       </div>
+      <Switch>
+        <Route path="/:ingredientId">
+          <Ingredients />
+        </Route>
+      </Switch>
     </div>
   );
 }
