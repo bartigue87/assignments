@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Recipe from "./Recipe";
 import { Switch, Route } from "react-router-dom";
-import Ingredients from "./Ingredients";
 
 function App() {
   const [recipes, setRecipes] = useState([]);
@@ -48,19 +47,9 @@ function App() {
       </form>
       <div className="recipes">
         {recipes.map(recipe => (
-          <Recipe
-            key={recipe.idMeal}
-            id={recipe.idMeal}
-            title={recipe.strMeal}
-            image={recipe.strMealThumb}
-          />
+          <Recipe title={recipe.strMeal} image={recipe.strMealThumb} />
         ))}
       </div>
-      <Switch>
-        <Route path="/recipe/:id">
-          <Ingredients />
-        </Route>
-      </Switch>
     </div>
   );
 }

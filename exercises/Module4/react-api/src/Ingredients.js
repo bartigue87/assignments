@@ -1,25 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 function Ingredients(props) {
-  const { ingredientId } = useParams();
-  const thisIngredient = props.recioe.find(
-    ingredient => props.recipe.recipe.label === ingredientId
-  );
+  const { id } = useParams();
+  useEffect(() => {
+    fetchItems();
+  }, []);
 
-  function wholeNum(num) {
-    return Math.ceil(num);
-  }
+  const [item, setItems] = useState("");
+
+  const fetchItems = () => {
+    fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        setItems(data);
+      });
+  };
+
   return (
     <div>
-      <h1>{thisIngredient.title}</h1>
-      <ul>
-        {thisIngredient.ingredients.map(ingredient => (
-          <li>{ingredient.text}</li>
-        ))}
-      </ul>
-      <p>Calories: {wholeNum(thisIngredient.calories)}</p>
-      <img src={thisIngredient.image} alt="" />
+      <h1>Item</h1>
     </div>
   );
 }
