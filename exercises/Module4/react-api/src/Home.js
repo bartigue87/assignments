@@ -15,7 +15,11 @@ function Home() {
       .then(response => response.json())
       .then(data => {
         console.log(data.meals);
-        setRecipes(data.meals);
+        if (data.meals === null) {
+          return alert("There are no search results. Try again.");
+        } else {
+          setRecipes(data.meals);
+        }
       });
   };
 
@@ -30,21 +34,23 @@ function Home() {
   };
 
   return (
-    <div className="container">
+    <div className="">
       <h1>Recipe Finder</h1>
-      <form onSubmit={handleSubmit} className="form">
-        <input
-          placeholder="Search for meals or keyword "
-          className="input"
-          type="text"
-          value={search}
-          onChange={handleChange}
-        />
-        <button className="button" type="submit">
-          Search
-        </button>
-      </form>
-      <div className="recipes">
+      <div classname="flex">
+        <form onSubmit={handleSubmit} className="">
+          <input
+            placeholder="Search for meals or keyword "
+            className="search"
+            type="text"
+            value={search}
+            onChange={handleChange}
+          />
+          <button className="search-btn" type="submit">
+            Search
+          </button>
+        </form>
+      </div>
+      <div className="meals">
         {recipes.map(recipe => (
           <Recipe
             key={recipe.idMeal}

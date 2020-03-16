@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
+import Home from "./Home";
 
 function Ingredients(props) {
   const { id } = useParams();
@@ -48,6 +50,9 @@ function Ingredients(props) {
           ))}
         </ul>
       </div>
+      <Link to="/">
+        <p>Go Back</p>
+      </Link>
     </div>
   );
 }

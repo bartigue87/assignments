@@ -5,7 +5,7 @@ import Ingredients from "./Ingredients";
 
 function App() {
   return (
-    <div>
+    <div className="container">
       <Switch>
         <Route exact path="/">
           <Home />
