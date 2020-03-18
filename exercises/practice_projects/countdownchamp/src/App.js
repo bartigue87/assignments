@@ -27,12 +27,15 @@ class App extends React.Component {
         <Clock deadline={this.state.deadline} />
         <div>
           <input
+            className="input"
             placeholder="new date"
             name="newDeadline"
             value={this.state.newDeadline}
             onChange={this.handleChange}
           />
-          <button onClick={this.changeDeadline}>Submit</button>
+          <button className="button" onClick={this.changeDeadline}>
+            Submit
+          </button>
         </div>
       </div>
     );
