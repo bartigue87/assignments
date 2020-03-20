@@ -1,20 +1,18 @@
 import React from "react";
+import { UglyContextConsumer } from "./UglyContext";
 
-function UglyList() {
-  const UglyThings = [
-    {
-      title: "blobfish",
-      img:
-        "https://media.moddb.com/cache/images/groups/1/9/8215/thumb_620x2000/oceana-ecard_blobfish.jpg",
-      description: "Ugly fish"
-    }
-  ];
+function UglyThingsList() {
   return (
-    <div>
-      <h3>{UglyThings.title}</h3>
-      <img src={uglyThings.img} />
-      <p>{UglyThings.description}</p>
-    </div>
+    <UglyContextConsumer>
+      {context => (
+        <div>
+          <h3>{context.title}</h3>
+          <img src={context.image} />
+          <p>{context.description}</p>
+        </div>
+      )}
+    </UglyContextConsumer>
   );
 }
+
 export default UglyList;

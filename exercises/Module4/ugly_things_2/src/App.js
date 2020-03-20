@@ -1,12 +1,12 @@
 import React from "react";
 import Form from "./Form";
-// import List from "./List";
+import UglyList from "./UglyList";
 
 function App() {
   return (
     <div>
       <Form />
-      {/* <List /> */}
+      <UglyList />
     </div>
   );
 }

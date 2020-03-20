@@ -3,16 +3,22 @@ import { UglyContextConsumer } from "./UglyContext";
 
 class Form extends React.Component {
   state = {
-    name: "",
-    Img
+    title: "",
+    image: "",
+    description: "",
+    uglyThings: []
   };
-  handleSubmit = () => {};
+
+  handleChange = e => {
+    const { name, value } = e.target;
+    this.setState({ [name]: value });
+  };
   render() {
     return (
       <UglyContextConsumer>
         {context => (
           <div>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={context.handleSubmit}>
               <input
                 type="text"
                 name="title"

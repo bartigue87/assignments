@@ -3,7 +3,7 @@ const { Provider, Consumer } = React.createContext();
 
 class UglyContextProvider extends React.Component {
   render() {
-    return <Provider>{this.props.children}</Provider>;
+    return <Provider value={}>{this.props.children}</Provider>;
   }
 }
 

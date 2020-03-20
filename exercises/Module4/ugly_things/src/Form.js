@@ -5,7 +5,7 @@ function Form() {
   return (
     <UglyContextConsumer>
       {context => (
-        <div>
+        <div className="form">
           <form onSubmit={context.handleSubmit}>
             <input
               type="text"

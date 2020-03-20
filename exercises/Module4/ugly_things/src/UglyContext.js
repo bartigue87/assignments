@@ -3,10 +3,19 @@ const { Provider, Consumer } = React.createContext();
 
 class UglyContextProvider extends React.Component {
   state = {
-    title: "",
-    image: "",
-    description: "",
-    uglyThings: []
+    uglyThings: [
+      {
+        title: "Blobfish",
+        image:
+          "http://1.bp.blogspot.com/-a6qVV8gkkxk/TjLUwWlfivI/AAAAAAAABXY/8Z6GSPVEv8g/s1600/10-blobfish.jpg",
+        description: "ugly fish"
+      },
+      {
+        title: "Duck Car",
+        image: "https://hotclutch.files.wordpress.com/2010/09/uglycar41.jpg",
+        description: "ugly car"
+      }
+    ]
   };
 
   handleChange = event => {
@@ -17,6 +26,7 @@ class UglyContextProvider extends React.Component {
   handleSubmit = event => {
     event.preventDefault();
     this.setState(function(prevState) {
+      console.log(prevState.uglyThings);
       return {
         uglyThings: [
           {
@@ -34,9 +44,7 @@ class UglyContextProvider extends React.Component {
     return (
       <Provider
         value={{
-          title: this.state.title,
-          image: this.state.image,
-          description: this.props.description,
+          uglyThings: this.state.uglyThings,
           handleChange: this.handleChange,
           handleSubmit: this.handleSubmit
         }}

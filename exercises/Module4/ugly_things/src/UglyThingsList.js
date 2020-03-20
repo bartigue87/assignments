@@ -4,13 +4,19 @@ import { UglyContextConsumer } from "./UglyContext";
 function UglyThingsList() {
   return (
     <UglyContextConsumer>
-      {context => (
-        <div>
-          <h3>{context.title}</h3>
-          <img src={context.image} />
-          <p>{context.description}</p>
-        </div>
-      )}
+      {context =>
+        context.uglyThings.map(uglyThing => (
+          <div className="container">
+            <h3>{uglyThing.title}</h3>
+            <img className="uglyImg" src={uglyThing.image} alt="" />
+            <h3>{uglyThing.description}</h3>
+            {/* <button className="button" onClick={handleEditClick}>
+              Edit
+            </button>
+            <button onClick={handleDelClick}>Delete</button> */}
+          </div>
+        ))
+      }
     </UglyContextConsumer>
   );
 }

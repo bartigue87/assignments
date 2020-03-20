@@ -1,33 +1,30 @@
-document.getElementById("add-todo").addEventListener("submit", function(e){
-    e.preventDefault()
-    const input = document.getElementById("title")
-    const newItem = document.createElement("li")
+document.getElementById("add-todo").addEventListener("submit", function(e) {
+  e.preventDefault();
+  const input = document.getElementById("title");
+  const newItem = document.createElement("li");
 
-    newItem.textContent = input.value
-    document.getElementById("list").appendChild(newItem)
+  newItem.textContent = input.value;
+  document.getElementById("list").appendChild(newItem);
 
-    input.value = ""
-    const editButton = document.createElement("button")
-    const xButton = document.createElement("button")
+  input.value = "";
+  const editButton = document.createElement("button");
+  const xButton = document.createElement("button");
 
-    editButton.textContent = "edit"
-    xButton.textContent = "X"
-  
+  editButton.textContent = "edit";
+  xButton.textContent = "X";
 
-   
-    newItem.appendChild(editButton)
-    newItem.appendChild(xButton)
+  newItem.appendChild(editButton);
+  newItem.appendChild(xButton);
 
-    xButton.addEventListener("click", function(e){
-        e.preventDefault()
-        document.getElementById("list").removeChild(newItem)
-        newItem.removeChild(editButton)
-        newItem.removeChild(xButton)
-    })
-    
-   
-})
+  xButton.addEventListener("click", function(e) {
+    e.preventDefault();
+    document.getElementById("list").removeChild(newItem);
+    newItem.removeChild(editButton);
+    newItem.removeChild(xButton);
+  });
 
+  editButton.addEventListener("click");
+});
 
 // add-todo.addEventlistener("submit", (e) =>{
 //     e.preventDefault()
