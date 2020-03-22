@@ -239,3 +239,33 @@ removeSpace = str => {
 };
 
 console.log(removeSpace("frank sinatra"));
+
+function addUp(num) {
+  let rnum = 0;
+  for (let i = 0; i <= num; i++) {
+    rnum += i;
+  }
+  return rnum;
+}
+
+console.log(addUp(29));
+console.log(addUp(4));
+
+function toInt(str) {
+  return Number(str);
+}
+
+function toStr(int) {
+  return int.toString();
+}
+
+// function timeForMilkAndCookies(date) {
+//   if (date.getMonth() === 11 && date.getDate() === 24) {
+//     return true;
+//   } else return false;
+// }
+
+function timeForMilkAndCookies(date) {
+  return date.getMonth() == 11 && date.getDate() == 24;
+}
+console.log(timeForMilkAndCookies(1102, 11, 24));
