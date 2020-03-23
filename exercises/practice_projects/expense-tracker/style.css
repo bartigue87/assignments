@@ -86,7 +86,7 @@ input[type="number"] {
 
 .btn {
   cursor: pointer;
-  background-color: #9c88ff;
+  background-color: #3b5;
   box-shadow: var(--box-shadow);
   color: #fff;
   border: 0;
@@ -145,4 +145,10 @@ input[type="number"] {
 
 .list li:hover .delete-btn {
   opacity: 1;
+}
+
+.label {
+  font-style: italic;
+  margin-top: 0;
+  font-size: 14px;
 }

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-import Home from "./Home";
 
 function Ingredients(props) {
   const { id } = useParams();
@@ -41,6 +40,15 @@ function Ingredients(props) {
         {item.strArea ? <p>{item.strArea}</p> : ""}
       </div>
       <div class="main">
+        <p
+          style={{
+            fontWeight: "bold",
+            fontSize: "20px",
+            marginBottom: "5px"
+          }}
+        >
+          Instructions
+        </p>
         <p>{item.strInstructions}</p>
         <h2>Ingredients</h2>
         {console.log(ingredients)}

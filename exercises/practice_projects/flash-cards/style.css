@@ -107,6 +107,7 @@ h1 button {
 .inner-card-back {
   backface-visibility: hidden;
   position: absolute;
+  padding: 30px;
   top: 0;
   left: 0;
   display: flex;
