@@ -9,30 +9,45 @@ const users = [
   { name: "Betty", age: 92, _id: uuid() },
   { name: "George", age: 14, _id: uuid() }
 ];
+//Get all
+userRouter.get("/", (req, res) => {
+  res.send(users);
+});
 
-// userRouter.get("/", (req, res) => {
-//   res.send(users);
-// });
+//Get one
+userRouter.get("/:userId", (req, res) => {
+  const userId = req.params.userId;
+  const foundUser = users.find(user => user._id === userId);
+  res.send(foundUser);
+});
 
-// userRouter.post("/", (req, res) => {
-//   const newUser = req.body;
-//   newUser._id = uuid();
-//   users.push(newUser);
-//   //below is not required
-//   res.send(`Successfully added ${newUser.name} to the database`);
-// });
+// Get by name
+userRouter.get("/search/name", (req, res) => {
+  const name = req.query.name;
+  const filteredName = users.filter(user => user.name === name);
+  res.send(filteredName);
+});
 
-userRouter
-  .route("/")
-  .get((req, res) => {
-    res.send(users);
-  })
-  .post((req, res) => {
-    const newUser = req.body;
-    newUser._id = uuid();
-    users.push(newUser);
-    //below is not required
-    res.send(`Successfully added ${newUser.name} to the database`);
-  });
+//Post one
+userRouter.post("/", (req, res) => {
+  const newUser = req.body;
+  newUser._id = uuid();
+  users.push(newUser);
+  //below is not required
+  res.send(`Successfully added ${newUser.name} to the database`);
+});
+
+// userRouter
+//   .route("/")
+//   .get((req, res) => {
+//     res.send(users);
+//   })
+//   .post((req, res) => {
+//     const newUser = req.body;
+//     newUser._id = uuid();
+//     users.push(newUser);
+//     //below is not required
+//     res.send(`Successfully added ${newUser.name} to the database`);
+//   });
 
 module.exports = userRouter;
