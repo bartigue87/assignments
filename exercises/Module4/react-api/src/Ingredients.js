@@ -59,7 +59,7 @@ function Ingredients(props) {
         </ul>
       </div>
       <Link to="/">
-        <p>Go Back</p>
+        <p>Home</p>
       </Link>
     </div>
   );
