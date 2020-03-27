@@ -47,3 +47,28 @@
                 2.Callback Func - receives the request, response objects, also the 'next' function
         # The 'next' function
             Moves on to the middleware in the line on our server.
+
+#Status Codes
+https://http.cat
+
+    #200 - Successful Request
+    #201 - Successful Insert / Update
+    #401 - Unauthorized
+    #404 - Not Found
+    #500 - Server Error
+
+#INTRO to Mongoose
+npm install mongoose
+
+#Purpose
+Create models
+Query data
+
+    #Connect
+
+#Mongoose Schems
+Blueprints for out data
+
+#Mongoose Models
+Models have a Name, and a Blueprint (Schema)
+Models are used to perform the CRUD operations on data created with the Model

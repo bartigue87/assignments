@@ -31,7 +31,8 @@ bountyRouter
     newBounty._id = uuid();
     bounties.push(newBounty);
     //below not required
-    res.send(`successfully add ${newBounty.firstName} to the database`);
+    // res.send(`successfully add ${newBounty.firstName} to the database`);
+    res.send(newBounty);
   });
 
 bountyRouter.delete("/:bountyId", (req, res) => {
