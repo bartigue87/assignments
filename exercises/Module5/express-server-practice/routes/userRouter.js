@@ -21,7 +21,7 @@ userRouter.get("/:userId", (req, res) => {
   res.send(foundUser);
 });
 
-// Get by name
+// Get by name (QUERY)
 userRouter.get("/search/name", (req, res) => {
   const name = req.query.name;
   const filteredName = users.filter(user => user.name === name);
@@ -33,8 +33,24 @@ userRouter.post("/", (req, res) => {
   const newUser = req.body;
   newUser._id = uuid();
   users.push(newUser);
+  res.send(newUser);
+});
+
+//Delete one
+userRouter.delete("/:userId", (req, res) => {
+  const userId = req.params.userId;
+  const userIndex = users.findIndex(user => user._id === userId);
+  users.splice(userIndex, 1);
   //below is not required
-  res.send(`Successfully added ${newUser.name} to the database`);
+  res.send("successfully deleted user");
+});
+
+//Update one
+userRouter.put("/:userId", (req, res) => {
+  const userId = req.params.userId;
+  const userIndex = users.findIndex(user => user._id === userId);
+  const updatedUser = Object.assign(users[userIndex], req.body);
+  res.send(updatedUser);
 });
 
 // userRouter

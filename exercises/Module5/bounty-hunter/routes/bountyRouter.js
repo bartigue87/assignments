@@ -34,6 +34,20 @@ bountyRouter
     res.send(`successfully add ${newBounty.firstName} to the database`);
   });
 
+bountyRouter.delete("/:bountyId", (req, res) => {
+  const bountyId = req.params.bountyId;
+  const bountyIndex = bounties.findIndex(bounty => bounty._id === bountyId);
+  bounties.splice(bountyIndex, 1);
+  res.send("success");
+});
+
+bountyRouter.put("/:bountyId", (req, res) => {
+  const bountyId = req.params.bountyId;
+  const bountyIndex = bounties.findIndex(bounty => bounty._id === bountyId);
+  const updatedBounty = Object.assign(bounties[bountyIndex], req.body);
+  res.send(updatedBounty);
+});
+
 module.exports = bountyRouter;
 
 // //practce

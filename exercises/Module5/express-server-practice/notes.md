@@ -40,4 +40,10 @@
     # UUID - creates unique IDs
         * npm install uuid
 
-    #
+    #Middleware
+        #What is it?
+            app.use()
+                1.(optional) - Mount Path (endpoint)
+                2.Callback Func - receives the request, response objects, also the 'next' function
+        # The 'next' function
+            Moves on to the middleware in the line on our server.

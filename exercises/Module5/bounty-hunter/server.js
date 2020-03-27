@@ -5,8 +5,8 @@ app.use(express.json());
 
 app.use("/bounty", require("./routes/bountyRouter.js"));
 
-app.listen(9000, () => {
-  console.log("The server is running on Port 9000");
+app.listen(8787, () => {
+  console.log("The server is running on Port 8787");
 });
 
 // const express =require("express")
@@ -27,6 +27,6 @@ app.listen(9000, () => {
 
 // app.use("/bounty", require("./routes/bountyRouter.js"))
 
-// app.use(9000, () => {
+// app.listen(9000, () => {
 //     console.log("the server is running on Port 9000")
 // })
