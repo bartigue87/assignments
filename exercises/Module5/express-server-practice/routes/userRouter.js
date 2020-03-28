@@ -54,7 +54,7 @@ userRouter.post("/", (req, res, next) => {
 });
 
 //Delete one
-userRouter.delete("/:userId", (req, res) => {
+userRouter.delete("/:userId", (req, res, next) => {
   User.findOneAndDelete({ _id: req.params.userId }, (err, deletedItem) => {
     if (err) {
       res.status(500);
