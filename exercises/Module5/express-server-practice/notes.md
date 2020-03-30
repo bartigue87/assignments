@@ -72,3 +72,46 @@ Blueprints for out data
 #Mongoose Models
 Models have a Name, and a Blueprint (Schema)
 Models are used to perform the CRUD operations on data created with the Model
+
+#Git Collaboration
+
+    git branch
+    git checkout
+    git merge
+
+#Start the Repo, clone master
+
+    1. Create git repository on github
+    2. Connect/clone locally
+    3. Set up the code base
+         git add -A
+         git commit -m "initial commit"
+         git push
+
+    4. Clone the repository
+         git clone <pasted command github>
+    5. Create a feature branch
+         git branch branchname ...like server-setup
+    6. CHeckout to that branch
+         git checkout server-setup
+    7. Commit and push branch to github
+         git add -A
+         git commit -m "initial commit"
+         git push
+    8. git checkout master
+    9. Pull down remote master
+        git pull
+    10. Checkout back to local branch
+        git checkout server-setup
+    11. Merge local master into branch
+        git merge --no-ff master
+        - if goes well
+            shift + zz
+        - if goes badly
+         - resolve conflicts locally
+    12. Push branch to github
+         git add -A
+         git commit -m "initial commit"
+         git push
+    13. Create PR on github
+    14. Git checkout to master & git pull
