@@ -99,7 +99,7 @@ function volumeOfBox(l, w, h) {
 console.log(volumeOfBox(3, 4, 10));
 
 function getMultipliedArr(arr) {
-  return arr.map(function(num) {
+  return arr.map(function (num) {
     return num * 2;
   });
 }
@@ -135,7 +135,7 @@ function nSidedShape(n) {
     "Heptagon",
     "Octagon",
     "Nonagon",
-    "Decagon"
+    "Decagon",
   ];
   return arr[n - 1];
 }
@@ -153,7 +153,7 @@ function calculateExponent(num, exp) {
 }
 
 function addIndexes(arr) {
-  return arr.map(function(val, i) {
+  return arr.map(function (val, i) {
     return val + i;
   });
 }
@@ -211,7 +211,7 @@ function wumbo(words) {
 }
 
 function skipTooMuchSugarDrinks(drinks) {
-  return drinks.filter(function(drink) {
+  return drinks.filter(function (drink) {
     return drink !== "cola" && drink !== "fanta";
   });
 }
@@ -234,7 +234,7 @@ console.log(totalCups(29));
 // }
 // console.log(nums);
 
-removeSpace = str => {
+removeSpace = (str) => {
   return str.replace(/ /g, "_");
 };
 
@@ -269,3 +269,13 @@ function timeForMilkAndCookies(date) {
   return date.getMonth() == 11 && date.getDate() == 24;
 }
 console.log(timeForMilkAndCookies(1102, 11, 24));
+
+function volPizza(radius, height) {
+  const pi = 3.14159;
+
+  return Math.round(radius * radius * height * pi);
+}
+
+function kmtomiles(kilometers) {
+  return Number.parseFloat((kilometers * 0.621371).toFixed(5));
+}
