@@ -279,3 +279,6 @@ function volPizza(radius, height) {
 function kmtomiles(kilometers) {
   return Number.parseFloat((kilometers * 0.621371).toFixed(5));
 }
+function matchHouses(step) {
+  return step === 0 ? 0 : 5 * step + 1;
+}
