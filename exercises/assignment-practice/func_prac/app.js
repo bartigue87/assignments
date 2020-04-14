@@ -282,3 +282,10 @@ function kmtomiles(kilometers) {
 function matchHouses(step) {
   return step === 0 ? 0 : 5 * step + 1;
 }
+
+const arrayOfMultiples = (num, length) => {
+  return Array.from({ length: length }, (_, i) => num * (i + 1));
+};
+function minMax(arr) {
+  return [Math.min(...arr), Math.max(...arr)];
+}
