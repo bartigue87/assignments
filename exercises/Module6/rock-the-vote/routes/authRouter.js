@@ -3,7 +3,7 @@ const authRouter = express.Router();
 const User = require("../models/user.js");
 const jwt = require("jsonwebtoken");
 
-//Signup
+//signup
 authRouter.post("/signup", (req, res, next) => {
   User.findOne({ username: req.body.username.toLowerCase() }, (err, user) => {
     if (err) {
@@ -12,7 +12,7 @@ authRouter.post("/signup", (req, res, next) => {
     }
     if (user) {
       res.status(403);
-      return next(new Error("That username is already taken"));
+      return next(new Error("That username already exists"));
     }
     const newUser = new User(req.body);
     newUser.save((err, savedUser) => {
@@ -20,14 +20,13 @@ authRouter.post("/signup", (req, res, next) => {
         res.status(500);
         return next(err);
       }
-      // payload, secret
       const token = jwt.sign(savedUser.toObject(), process.env.SECRET);
       return res.status(201).send({ token, user: savedUser });
     });
   });
 });
 
-//Login
+//login
 authRouter.post("/login", (req, res, next) => {
   User.findOne({ username: req.body.username.toLowerCase() }, (err, user) => {
     if (err) {

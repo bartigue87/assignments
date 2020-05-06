@@ -1,16 +1,39 @@
+// const mongoose = require("mongoose");
+// const Schema = mongoose.Schema;
+
+// //User blueprint
+// const userSchema = new Schema({
+//   name: {
+//     type: String,
+//     required: true
+//   },
+//   age: {
+//     type: Number,
+//     required: true
+//   }
+// });
+
+// module.exports = mongoose.model("User", userSchema);
+
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-//User blueprint
-const userSchema = new Schema({
-  name: {
+const produceSchema = new Schema({
+  item: {
     type: String,
-    required: true
+    required: true,
   },
-  age: {
+  price: {
     type: Number,
-    required: true
-  }
+    required: true,
+  },
+  description: {
+    type: String,
+    required: true,
+  },
+  img: {
+    type: String,
+  },
 });
 
-module.exports = mongoose.model("User", userSchema);
+module.exports = mongoose.model("Produce", produceSchema);

@@ -9,19 +9,19 @@ const todoSchema = new Schema({
   description: {
     type: String,
   },
-  completed: {
+  upvoted: {
     type: Boolean,
     default: false,
   },
-  imgUrl: {
-    type: String,
-    required: true,
+  downvoted: {
+    type: Boolean,
+    required: false,
   },
   user: {
     type: Schema.Types.ObjectId,
     ref: "User",
-    required: false,
+    required: true,
   },
 });
 
-module.exports = mongoose.model("Todo", todoSchema);
+module.exports = mongoose.model("Issue", todoSchema);

@@ -18,14 +18,13 @@ mongoose.connect(
   },
   () => console.log("Connected to the DB")
 );
-
 app.use("/auth", require("./routes/authRouter.js"));
 app.use("/api", expressJwt({ secret: process.env.SECRET }));
-app.use("/api/todo", require("./routes/todoRouter.js"));
+app.use("/api/issue", require("./routes/issueRouter.js"));
 
 app.use((err, req, res, next) => {
   console.log(err);
-  if (err.name === "UnauthorizedError") {
+  if (err.name === "UnathorizedError") {
     res.status(err.status);
   }
   return res.send({ errMsg: err.message });

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Recipe from "./Recipe";
 
-function Home() {
+export default function Home() {
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState("");
   const [query, setQuery] = useState("");
@@ -12,8 +12,8 @@ function Home() {
 
   const getRecipes = () => {
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`)
-      .then(response => response.json())
-      .then(data => {
+      .then((response) => response.json())
+      .then((data) => {
         console.log(data.meals);
         if (data.meals === null) {
           return alert("There are no search results. Try again.");
@@ -23,11 +23,11 @@ function Home() {
       });
   };
 
-  const handleChange = event => {
+  const handleChange = (event) => {
     setSearch(event.target.value);
   };
 
-  const handleSubmit = event => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     setQuery(search);
     setSearch("");
@@ -51,7 +51,7 @@ function Home() {
         </form>
       </div>
       <div className="meals">
-        {recipes.map(recipe => (
+        {recipes.map((recipe) => (
           <Recipe
             key={recipe.idMeal}
             id={recipe.idMeal}
@@ -63,5 +63,3 @@ function Home() {
     </div>
   );
 }
-
-export default Home;
