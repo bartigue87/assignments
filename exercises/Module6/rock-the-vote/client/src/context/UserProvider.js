@@ -17,6 +17,7 @@ export default function UserProvider(props) {
     token: localStorage.getItem("token") || "",
     issues: [],
     errMsg: "",
+    allIssues: [],
   };
 
   const [userState, setUserState] = useState(initState);
@@ -45,6 +46,7 @@ export default function UserProvider(props) {
         localStorage.setItem("token", token);
         localStorage.setItem("user", JSON.stringify(user));
         getUserIssues();
+        getAllIssues();
         setUserState((prevUserState) => ({
           ...prevUserState,
           user,
@@ -90,6 +92,18 @@ export default function UserProvider(props) {
       .catch((err) => console.log(err.response.data.errMsg));
   }
 
+  function getAllIssues() {
+    userAxios
+      .get("api/issue")
+      .then((res) => {
+        setUserState((prevState) => ({
+          ...prevState,
+          allIssues: res.data,
+        }));
+      })
+      .catch((err) => console.log(err.response.data.errMsg));
+  }
+
   function addIssue(newIssue) {
     userAxios
       .post("/api/issue", newIssue)
@@ -111,6 +125,7 @@ export default function UserProvider(props) {
         logout,
         addIssue,
         resetAuthErr,
+        getAllIssues,
       }}
     >
       {props.children}
