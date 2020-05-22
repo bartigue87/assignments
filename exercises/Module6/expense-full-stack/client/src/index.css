@@ -8,9 +8,9 @@
   text-decoration: none;
 }
 
-.app {
+/* .app {
   background-color: #eee9;
-}
+} */
 
 .navbar {
   display: flex;
@@ -18,6 +18,11 @@
   align-items: center;
   height: 40px;
   background-color: #3339;
+}
+
+.logout {
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .auth-container {
@@ -41,7 +46,7 @@
   border: 1px solid #3339;
   padding: 20px;
   border-radius: 5px;
-  background-color: #aaa9;
+  background-color: white;
 
   display: flex;
   flex-direction: column;
@@ -54,13 +59,16 @@
 }
 
 .auth-container > form > button {
-  margin: 16px 8px;
-  padding: 8px;
+  cursor: pointer;
+  background-color: #3498db;
+  border: 2px solid #3498db;
   border-radius: 4px;
-}
-
-.public {
-  height: 100vh;
+  color: white;
+  display: block;
+  font-size: 16px;
+  padding: 10px;
+  margin-top: 20px;
+  width: 100%;
 }
 
 .profile {
@@ -106,7 +114,7 @@
   box-sizing: border-box;
 }
 
-body {
+/* body {
   background-color: #f7f7f7;
   display: flex;
   flex-direction: column;
@@ -118,8 +126,8 @@ body {
 
 .container {
   margin: 30px auto;
-  width: 350px;
-}
+  width: 450px;
+} */
 
 h1 {
   letter-spacing: 1px;
@@ -220,11 +228,11 @@ input[type="number"] {
 }
 
 .list li.plus {
-  border-right: 5px solid #2ecc71;
+  border-bottom: 5px solid #2ecc71;
 }
 
 .list li.minus {
-  border-right: 5px solid #c0392b;
+  border-bottom: 5px solid #c0392b;
 }
 
 .delete-btn {
@@ -251,4 +259,8 @@ input[type="number"] {
   font-style: italic;
   margin-top: 0;
   font-size: 14px;
+}
+
+.balance {
+  font-size: 30px;
 }

@@ -20,7 +20,7 @@ mongoose.connect(
 );
 app.use("/author", require("./routes/authorRouter.js"));
 app.use("/api", expressJwt({ secret: process.env.SECRET }));
-// app.use("/api/track", require("./routes/trackRouter.js"));
+app.use("/api/transaction", require("./routes/transactionRouter.js"));
 
 app.use((err, req, res, next) => {
   console.log(err);

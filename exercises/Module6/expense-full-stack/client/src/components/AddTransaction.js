@@ -1,21 +1,30 @@
 import React, { useState, useContext } from "react";
-import { GlobalContext } from "../context/GlobalState";
+import { UserContext } from "../context/UserProvider";
+
+const initInputs = {
+  text: "",
+  amount: "",
+};
 
 export default function AddTransaction() {
-  const [text, setText] = useState("");
-  const [amount, setAmount] = useState("");
+  const [inputs, setInputs] = useState(initInputs);
 
-  const { addTransaction } = useContext(GlobalContext);
+  const { addTransaction } = useContext(UserContext);
+
+  function handleChange(e) {
+    const { name, value } = e.target;
+    setInputs((prevInputs) => ({
+      ...prevInputs,
+      [name]: value,
+    }));
+  }
 
   function handleSubmit(e) {
     e.preventDefault();
-    const newTransaction = {
-      id: balalal,
-      text,
-      amount: +amount,
-    };
-    addTransaction(newTransaction);
+    addTransaction(inputs);
+    setInputs(initInputs);
   }
+  const { text, amount } = inputs;
   return (
     <>
       <h3>Add new transaction</h3>
@@ -24,20 +33,22 @@ export default function AddTransaction() {
           <label htmlFor="text">Title</label>
           <input
             type="text"
+            name="text"
             value={text}
-            onchange={(e) => setText(e.target.value)}
+            onChange={handleChange}
             placeholder="Enter text..."
           />
         </div>
         <div className="form-control">
-          <label htmlFor="amount">Amount </label>
+          <label htmlFor="amount">Amount</label>
           <label className="label">
             * Use a negative number for expense and a positive number for income
           </label>
           <input
             type="number"
+            name="amount"
             value={amount}
-            onchange={(e) => setAmount(e.target.value)}
+            onChange={handleChange}
             placeholder="Enter amount..."
           />
         </div>

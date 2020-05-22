@@ -15,7 +15,7 @@ export default function UserProvider(props) {
   const initState = {
     user: JSON.parse(localStorage.getItem("user")) || {},
     token: localStorage.getItem("token") || "",
-    issues: [],
+    transactions: [],
     errMsg: "",
   };
 
@@ -44,14 +44,14 @@ export default function UserProvider(props) {
         const { user, token } = res.data;
         localStorage.setItem("token", token);
         localStorage.setItem("user", JSON.stringify(user));
-        getUserTrack();
+        getUserTransaction();
         setUserState((prevUserState) => ({
           ...prevUserState,
           user,
           token,
         }));
       })
-      .catch((err) => handleAuthErr(err.response.data.errMsg));
+      .catch((err) => err);
   }
 
   function logout() {
@@ -77,29 +77,33 @@ export default function UserProvider(props) {
     }));
   }
 
-  function getUserTrack() {
+  function getUserTransaction() {
     userAxios
-      .get("api/track/user")
+      .get("api/transaction/user")
       .then((res) => {
         setUserState((prevState) => ({
           ...prevState,
-          issues: res.data,
+          transactions: res.data,
         }));
       })
       .catch((err) => console.log(err.response.data.err));
   }
 
-  function addTrack(newTrack) {
+  function addTransaction(newTransaction) {
     userAxios
-      .post("/api/track", newTrack)
+      .post("/api/transaction", newTransaction)
       .then((res) => {
         setUserState((prevState) => ({
           ...prevState,
-          tracks: [...prevState.issues, res.data],
+          transactions: [...prevState.transactions, res.data],
         }));
       })
       .catch((err) => console.log(err.response.data.errMsg));
   }
+
+  // function deleteTransaction(transactionId) {
+  //   userAxios.delete("/api/transaction/:transactionId");
+  // }
 
   return (
     <UserContext.Provider
@@ -109,6 +113,8 @@ export default function UserProvider(props) {
         login,
         logout,
         resetAuthErr,
+        addTransaction,
+        getUserTransaction,
       }}
     >
       {props.children}

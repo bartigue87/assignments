@@ -123,7 +123,7 @@ export default function UserProvider(props) {
         signup,
         login,
         logout,
-        addIssue,
+        addIssues,
         resetAuthErr,
         getAllIssues,
       }}

@@ -1,8 +1,13 @@
 import React from "react";
 import "./App.css";
+import { GlobalProvider } from "./context/GlobalState";
 
 function App() {
-  return <div>hello world</div>;
+  return (
+    <GlobalProvider>
+      <div>hello world</div>
+    </GlobalProvider>
+  );
 }
 
 export default App;

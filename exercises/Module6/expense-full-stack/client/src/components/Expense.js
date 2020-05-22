@@ -1,9 +1,7 @@
-import React, { useContext } from "react";
-import { GlobalContext } from "../context/GlobalState";
+import React from "react";
 
-export default function Expense() {
-  const { transactions } = useContext(GlobalContext);
-
+export default function Expense(props) {
+  const { transactions } = props;
   const amounts = transactions.map((transaction) => transaction.amount);
 
   const income = amounts
@@ -15,7 +13,6 @@ export default function Expense() {
     amounts.filter((item) => item < 0).reduce((acc, item) => (acc += item), 0) *
     -1
   ).toFixed(2);
-
   return (
     <div className="inc-exp-container">
       <div>
