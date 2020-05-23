@@ -21,6 +21,10 @@ export default function UserProvider(props) {
   };
 
   const [userState, setUserState] = useState(initState);
+  const [isToggledOn, setIsToggledOn] = useState(false);
+  function toggle() {
+    setIsToggledOn((prevState) => !prevState);
+  }
 
   function signup(credentials) {
     axios
@@ -123,9 +127,11 @@ export default function UserProvider(props) {
         signup,
         login,
         logout,
-        addIssues,
+        addIssue,
         resetAuthErr,
         getAllIssues,
+        toggle,
+        isToggledOn,
       }}
     >
       {props.children}

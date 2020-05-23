@@ -17,6 +17,10 @@ const issueSchema = new Schema({
     type: Boolean,
     required: false,
   },
+  comment: {
+    type: String,
+    required: false,
+  },
   user: {
     type: Schema.Types.ObjectId,
     ref: "User",
