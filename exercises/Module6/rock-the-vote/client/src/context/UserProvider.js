@@ -132,6 +132,7 @@ export default function UserProvider(props) {
         getAllIssues,
         toggle,
         isToggledOn,
+        getUserIssues,
       }}
     >
       {props.children}

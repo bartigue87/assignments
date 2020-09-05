@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import IssueForm from "./IssueForm.js";
 import IssueList from "./IssueList.js";
 import { UserContext } from "../context/UserProvider.js";
@@ -8,7 +8,12 @@ export default function Profile() {
     user: { username },
     addIssue,
     issues,
+    getUserIssues,
   } = useContext(UserContext);
+
+  useEffect(() => {
+    getUserIssues();
+  }, []);
 
   console.log(issues);
 
