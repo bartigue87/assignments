@@ -34,28 +34,28 @@
 // };
 
 // Project Euler #1
-// let total = 0;
+let total = 0;
 
-// for (i = 0; i < 1000; i++) {
-//   if (i % 3 === 0 || i % 5 === 0) {
-//     total += i;
-//   }
-//   console.log(total);
-// }
+for (i = 0; i < 1000; i++) {
+  if (i % 3 === 0 || i % 5 === 0) {
+    total += i;
+  }
+  console.log(total);
+}
 
 // // Project euler #2
-// var fib = [0, 1];
-// var i = 0;
-// var sum = 0;
-// while (fib[0] + fib[1] < 4000000) {
-//   i = fib[0] + fib[1];
-//   fib[0] = fib[1];
-//   fib[1] = i;
+var fib = [0, 1];
+var i = 0;
+var sum = 0;
+while (fib[0] + fib[1] < 4000000) {
+  i = fib[0] + fib[1];
+  fib[0] = fib[1];
+  fib[1] = i;
 
-//   if (i % 2 === 0) {
-//     sum += i;
-//   }
-// }
+  if (i % 2 === 0) {
+    sum += i;
+  }
+}
 
 // console.log(sum);
 
@@ -73,6 +73,5 @@ function getPrime(number) {
   return factor;
 }
 
-getPrime(600851475143);
-
-console.log(getPrime(600851475143));
+result = getPrime(600851475143);
+console.log(result);
